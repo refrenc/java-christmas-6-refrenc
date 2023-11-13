@@ -31,6 +31,7 @@
 
 #### menuItem
 - [x] menuItem 리턴하는 함수
+- [x] price 리턴하는 함수
 
 #### badge
 - [x] price에 따라 badge 리턴하는 함수
