@@ -15,12 +15,10 @@ public class Order {
 
     private List<Event> events;
     private Map<MenuItem, Integer> orders;
-    private Integer date;
 
     public Order(List<Event> eventAll, Map<MenuItem, Integer> orders, Integer date) {
         this.orders = orders;
         this.events = filterEvent(eventAll, orders, date);
-        this.date = date;
     }
 
     public List<Event> getEvents() {
