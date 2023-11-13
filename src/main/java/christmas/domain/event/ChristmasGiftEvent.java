@@ -6,12 +6,12 @@ import christmas.domain.condition.Condition;
 import java.util.List;
 import java.util.Map;
 
-public class ChristmasGiftEvent implements Event, GiftEvent{
+public class ChristmasGiftEvent implements Event, GiftEvent {
 
     private List<Condition> conditions;
 
-    public ChristmasGiftEvent(Integer totalPrice) {
-        this.conditions = List.of(new GiftCondition(totalPrice));
+    public ChristmasGiftEvent() {
+        this.conditions = List.of(new GiftCondition());
     }
 
     @Override
