@@ -15,6 +15,7 @@ public class OutputView {
 
     static public void printDescription() {
         System.out.println("12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
+        System.out.println();
     }
 
     static public void printMenu(Map<MenuItem, Integer> orders) {
@@ -40,18 +41,23 @@ public class OutputView {
         System.out.println();
     }
 
-    static public void printDiscountList(List<Event> events, Map<MenuItem, Integer> orders) {
+    static public void printDiscountList(List<Event> events) {
         System.out.println("<혜택 내역>");
+        if(events.isEmpty()) {
+            System.out.println("없음");
+            System.out.println();
+            return;
+        }
         for (Event event : events) {
             System.out.printf("%s: %s원\n", event.getEventName(),
-                    formatNumber(event.getDiscountPrice(orders)));
+                    formatNumber(event.getDiscountPrice() * -1));
         }
         System.out.println();
     }
 
     static public void printDiscountPrice(Integer discountPrice) {
         System.out.println("<총혜택 금액>");
-        System.out.println(formatNumber(discountPrice) + "원");
+        System.out.println(formatNumber(discountPrice * -1) + "원");
         System.out.println();
     }
 
@@ -63,7 +69,7 @@ public class OutputView {
 
     static public void printBadge(Badge badge) {
         System.out.println("<12월 이벤트 배지>");
-        System.out.println(badge.name());
+        System.out.println(badge.getTitle());
     }
 
     static private String formatNumber(Integer number) {
