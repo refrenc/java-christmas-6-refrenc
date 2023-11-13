@@ -14,7 +14,7 @@ class GiftConditionTest {
 
     @Test
     void 증정_이벤트_적용여부_테스트_참() {
-        assertThat(new GiftCondition().isEventApplicable(12_000)).isTrue();
+        assertThat(new GiftCondition().isEventApplicable(120_000)).isTrue();
     }
 
     @Test

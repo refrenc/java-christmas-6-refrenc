@@ -1,14 +1,20 @@
 package christmas.domain.condition;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 public class WeekendCondition implements Condition {
 
     @Override
     public boolean isEventApplicable(Integer price) {
-        return false;
+        return price >= 10_000;
     }
 
     @Override
     public boolean isEventDay(Integer date) {
-        return false;
+
+        LocalDate reservedAt = LocalDate.of(2023, 12, date);
+        return reservedAt.getDayOfWeek().equals(DayOfWeek.FRIDAY)
+                || reservedAt.getDayOfWeek().equals(DayOfWeek.SATURDAY);
     }
 }

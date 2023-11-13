@@ -4,11 +4,11 @@ public class ChristmasDayCondition implements Condition {
 
     @Override
     public boolean isEventApplicable(Integer price) {
-        return false;
+        return price >= 10_000;
     }
 
     @Override
     public boolean isEventDay(Integer date) {
-        return false;
+        return date <= 25;
     }
 }

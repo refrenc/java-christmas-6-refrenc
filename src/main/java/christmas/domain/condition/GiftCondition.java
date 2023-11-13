@@ -2,15 +2,15 @@ package christmas.domain.condition;
 
 public class GiftCondition implements Condition {
 
-    private static final Integer minTotalPrice = 120_000;
+    private static final Integer MIN_TOTAL_PRICE = 120_000;
 
     @Override
     public boolean isEventApplicable(Integer price) {
-        return false;
+        return price >= MIN_TOTAL_PRICE;
     }
 
     @Override
     public boolean isEventDay(Integer date) {
-        return false;
+        return true;
     }
 }
