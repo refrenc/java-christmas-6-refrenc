@@ -27,8 +27,6 @@
 ### domain
 
 #### menu
-- [ ] price 리턴하는 함수
-- [ ] 메뉴가 존재하는지 리턴하는 함수
 - [x] menuType 리턴하는 함수
 
 #### menuItem

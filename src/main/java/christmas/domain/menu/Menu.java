@@ -26,12 +26,4 @@ public enum Menu {
         }
         throw new IllegalArgumentException("");
     }
-
-    public static Integer getPrice(String name) {
-        return null;
-    }
-
-    public static boolean isExist(String name) {
-        return false;
-    }
 }
