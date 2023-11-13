@@ -17,7 +17,14 @@ public enum Menu {
     }
 
     public static Menu fromName(String name) {
-        return null;
+        for (Menu menu : Menu.values()) {
+            for (MenuItem menuItem : menu.menus) {
+                if (menuItem.name().equals(name)) {
+                    return menu;
+                }
+            }
+        }
+        throw new IllegalArgumentException("");
     }
 
     public static Integer getPrice(String name) {

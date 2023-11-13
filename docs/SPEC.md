@@ -32,10 +32,12 @@
   - [ ] 중복 메뉴 주문 불가
 
 #### menu
-- [ ] static 변수로 메뉴 저장
 - [ ] price 리턴하는 함수
 - [ ] 메뉴가 존재하는지 리턴하는 함수
-- [ ] menuType 리턴하는 함수
+- [x] menuType 리턴하는 함수
+
+#### menuItem
+- [x] menuItem 리턴하는 함수
 
 #### badge
 - [ ] price에 따라 badge 리턴하는 함수
