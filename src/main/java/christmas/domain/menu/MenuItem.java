@@ -20,6 +20,10 @@ public enum MenuItem {
         this.price = price;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
     public static MenuItem fromName(String name) {
         for (MenuItem menu : MenuItem.values()) {
             if (menu.name().equals(name)) {
