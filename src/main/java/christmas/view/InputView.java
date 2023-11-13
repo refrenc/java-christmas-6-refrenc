@@ -40,14 +40,14 @@ public class InputView {
     }
 
     static void verifyOrder(String input) {
-        // TODO: {메뉴}-{개수}의 형식, 개수는 1 이상의 숫자, 메뉴 중복 불가, 존재하는 메뉴만 가능
+        // TODO: {메뉴}-{개수}의 형식, 개수는 1 이상의 숫자, 메뉴 중복 불가, 존재하는 메뉴만 가능, 음료만 주문 불가
         String[] orders = input.split(",");
         List<MenuItem> menus = new ArrayList<>();
         Set<Menu> menuTypes = new HashSet<>();
         for (String order : orders) {
             String[] fragment = order.split("-");
             String menu = fragment[0];
-            if (fragment.length != 2
+            if (orders.length > 20 || fragment.length != 2
                     || menus.contains(MenuItem.fromName(menu))
                     || convertStringToInteger(fragment[1]) < 1) {
                 throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
