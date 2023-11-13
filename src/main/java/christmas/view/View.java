@@ -1,8 +1,11 @@
 package christmas.view;
 
+import christmas.domain.order.Order;
+
 public class View {
 
     public Integer readDate() {
+        OutputView.printHello();
         while (true) {
             try {
                 return InputView.readDate();
@@ -20,4 +23,14 @@ public class View {
         }
     }
 
+    public void printResult(Order order) {
+        OutputView.printDescription();
+        OutputView.printMenu(order.getOrders());
+        OutputView.printTotalPrice(order.getTotalPrice());
+        OutputView.printGift(order.getGifts());
+        OutputView.printDiscountList(order.getEvents(), order.getOrders());
+        OutputView.printDiscountPrice(order.getDiscountPrice());
+        OutputView.printDiscountedPrice(order.getDiscountedPrice());
+        OutputView.printBadge(order.getBadge());
+    }
 }

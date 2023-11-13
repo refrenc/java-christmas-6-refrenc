@@ -1,47 +1,73 @@
 package christmas.view;
 
+import christmas.domain.Badge;
+import christmas.domain.event.Event;
+import christmas.domain.menu.MenuItem;
+import java.text.DecimalFormat;
+import java.util.List;
+import java.util.Map;
+
 public class OutputView {
 
-    public void printHello() {
+    static public void printHello() {
         System.out.println("안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.");
     }
 
-    public void printDescription() {
+    static public void printDescription() {
         System.out.println("12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
     }
 
-    public void printMenu() {
+    static public void printMenu(Map<MenuItem, Integer> orders) {
         System.out.println("<주문 메뉴>");
-        // ...
+        orders.forEach((order, amount) -> System.out.printf("%s %d개\n", order.name(), amount));
+        System.out.println();
     }
 
-    public void printTotalPrice() {
+    static public void printTotalPrice(Integer totalPrice) {
         System.out.println("<할인 전 총주문 금액>");
-        // ...
+        System.out.println(formatNumber(totalPrice) + "원");
+        System.out.println();
     }
 
-    public void printGift() {
+    static public void printGift(Map<MenuItem, Integer> gifts) {
         System.out.println("<증정 메뉴>");
-        // ...
+        if (gifts.isEmpty()) {
+            System.out.println("없음");
+            System.out.println();
+            return;
+        }
+        gifts.forEach((order, amount) -> System.out.printf("%s %d개\n", order.name(), amount));
+        System.out.println();
     }
 
-    public void printDiscountList() {
+    static public void printDiscountList(List<Event> events, Map<MenuItem, Integer> orders) {
         System.out.println("<혜택 내역>");
-        // ...
+        for (Event event : events) {
+            System.out.printf("%s: %s원\n", event.getEventName(),
+                    formatNumber(event.getDiscountPrice(orders)));
+        }
+        System.out.println();
     }
 
-    public void printDiscountPrice() {
+    static public void printDiscountPrice(Integer discountPrice) {
         System.out.println("<총혜택 금액>");
-        // ...
+        System.out.println(formatNumber(discountPrice) + "원");
+        System.out.println();
     }
 
-    public void printDiscountedPrice() {
+    static public void printDiscountedPrice(Integer discountedPrice) {
         System.out.println("<할인 후 예상 결제 금액>");
-        // ...
+        System.out.println(formatNumber(discountedPrice) + "원");
+        System.out.println();
     }
 
-    public void printBadge() {
+    static public void printBadge(Badge badge) {
         System.out.println("<12월 이벤트 배지>");
-        // ...
+        System.out.println(badge.name());
+    }
+
+    static private String formatNumber(Integer number) {
+        DecimalFormat decimalFormat = new DecimalFormat("#,###");
+        return decimalFormat.format(number);
     }
 }
