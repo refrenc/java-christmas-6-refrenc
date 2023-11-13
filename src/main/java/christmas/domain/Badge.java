@@ -11,6 +11,10 @@ public enum Badge {
         this.minPrice = minPrice;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public static Badge calculateBadge(Integer price) {
         Badge result = NONE;
         for (Badge badge : Badge.values()) {
