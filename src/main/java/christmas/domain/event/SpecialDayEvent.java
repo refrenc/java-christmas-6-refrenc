@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class SpecialDayEvent implements Event {
 
+    private Integer discountPrice;
+
     @Override
     public List<Condition> getConditions() {
         return List.of(new SpecialDayCondition());
@@ -15,11 +17,16 @@ public class SpecialDayEvent implements Event {
 
     @Override
     public String getEventName() {
-        return null;
+        return "특별 할인";
     }
 
     @Override
-    public Integer getDiscountPrice(Map<MenuItem, Integer> menus) {
-        return null;
+    public Integer getDiscountPrice() {
+        return discountPrice;
+    }
+
+    @Override
+    public void calculateDiscountPrice(Map<MenuItem, Integer> menus, Integer date) {
+        discountPrice = 1_000;
     }
 }

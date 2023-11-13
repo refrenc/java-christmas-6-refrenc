@@ -8,5 +8,6 @@ import java.util.Map;
 public interface Event {
     List<Condition> getConditions();
     String getEventName();
-    Integer getDiscountPrice(Map<MenuItem, Integer> menus);
+    Integer getDiscountPrice();
+    void calculateDiscountPrice(Map<MenuItem, Integer> menus, Integer date);
 }
