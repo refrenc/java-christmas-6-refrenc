@@ -4,7 +4,7 @@ import christmas.domain.order.Order;
 
 public class View {
 
-    public Integer readDate() {
+    static public Integer readDate() {
         OutputView.printHello();
         while (true) {
             try {
@@ -14,7 +14,7 @@ public class View {
         }
     }
 
-    public String readOrder() {
+    static public String readOrder() {
         while (true) {
             try {
                 return InputView.readOrder();
@@ -23,7 +23,7 @@ public class View {
         }
     }
 
-    public void printResult(Order order) {
+    static public void printResult(Order order) {
         OutputView.printDescription();
         OutputView.printMenu(order.getOrders());
         OutputView.printTotalPrice(order.getTotalPrice());
