@@ -12,6 +12,14 @@ public enum Badge {
     }
 
     public static Badge calculateBadge(Integer price) {
-        return null;
+        Badge result = NONE;
+        for (Badge badge : Badge.values()) {
+            if (badge.minPrice > price) {
+                return result;
+            }
+            result = badge;
+        }
+
+        return result;
     }
 }
