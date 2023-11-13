@@ -3,7 +3,7 @@ package christmas.domain.condition;
 public class WeekdayCondition implements Condition {
 
     @Override
-    public boolean isEventApplicable() {
+    public boolean isEventApplicable(Integer price) {
         return false;
     }
 

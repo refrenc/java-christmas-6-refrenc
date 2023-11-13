@@ -19,6 +19,6 @@ class ChristmasDayConditionTest {
 
     @Test
     void 크리스마스_디데이_할인_적용여부_테스트() {
-        assertThat(new ChristmasDayCondition().isEventApplicable()).isTrue();
+        assertThat(new ChristmasDayCondition().isEventApplicable(10_000)).isTrue();
     }
 }

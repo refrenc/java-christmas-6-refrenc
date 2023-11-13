@@ -19,6 +19,6 @@ class SpecialDayConditionTest {
 
     @Test
     void 특별_할인_적용여부_테스트() {
-        assertThat(new SpecialDayCondition().isEventApplicable()).isTrue();
+        assertThat(new SpecialDayCondition().isEventApplicable(10_000)).isTrue();
     }
 }

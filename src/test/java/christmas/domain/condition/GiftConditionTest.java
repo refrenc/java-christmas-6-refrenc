@@ -9,16 +9,16 @@ class GiftConditionTest {
 
     @Test
     void 증정_이벤트_기간_테스트_참() {
-        assertThat(new GiftCondition(0).isEventDay(4)).isTrue();
+        assertThat(new GiftCondition().isEventDay(4)).isTrue();
     }
 
     @Test
     void 증정_이벤트_적용여부_테스트_참() {
-        assertThat(new GiftCondition(12_000).isEventApplicable()).isTrue();
+        assertThat(new GiftCondition().isEventApplicable(12_000)).isTrue();
     }
 
     @Test
     void 증정_이벤트_적용여부_테스트_거짓() {
-        assertThat(new GiftCondition(1_000).isEventApplicable()).isFalse();
+        assertThat(new GiftCondition().isEventApplicable(10_000)).isFalse();
     }
 }

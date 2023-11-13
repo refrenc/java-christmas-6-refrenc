@@ -19,6 +19,6 @@ class WeekdayConditionTest {
 
     @Test
     void 평일_할인_적용여부_테스트() {
-        assertThat(new WeekdayCondition().isEventApplicable()).isTrue();
+        assertThat(new WeekdayCondition().isEventApplicable(10_000)).isTrue();
     }
 }
