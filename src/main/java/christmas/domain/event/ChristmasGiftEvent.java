@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ChristmasGiftEvent implements Event, GiftEvent {
-    private static final MenuItem gift = MenuItem.샴페인;
+    private static final MenuItem GIFT = MenuItem.샴페인;
 
     private List<Condition> conditions;
     private Integer discountPrice;
@@ -33,11 +33,11 @@ public class ChristmasGiftEvent implements Event, GiftEvent {
 
     @Override
     public void calculateDiscountPrice(Map<MenuItem, Integer> menus, Integer date) {
-        discountPrice = gift.getPrice();
+        discountPrice = GIFT.getPrice();
     }
 
     @Override
     public MenuItem getGift() {
-        return gift;
+        return GIFT;
     }
 }

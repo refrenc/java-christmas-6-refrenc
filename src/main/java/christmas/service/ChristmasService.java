@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 public class ChristmasService {
-    static final private List<Event> eventAll = List.of(new ChristmasDayEvent(),
+    private static final List<Event> EVENT_LIST = List.of(new ChristmasDayEvent(),
             new WeekdayEvent(), new WeekendEvent(), new SpecialDayEvent(),
             new ChristmasGiftEvent());
 
     // TODO: Order 반환
     public Order getOrder(Integer date, String[] orders) {
-        return new Order(eventAll, convertToList(orders), date);
+        return new Order(EVENT_LIST, convertToList(orders), date);
     }
 
     // TODO: 주문 String을 Map으로 변환 후 리턴
