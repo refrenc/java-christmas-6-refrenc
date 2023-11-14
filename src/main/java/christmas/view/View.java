@@ -28,7 +28,7 @@ public class View {
     }
 
     static public void printResult(Order order) {
-        OutputView.printDescription();
+        OutputView.printDescription(order.getDate());
         OutputView.printMenu(order.getOrders());
         OutputView.printTotalPrice(order.getTotalPrice());
         OutputView.printGift(order.getGifts());
