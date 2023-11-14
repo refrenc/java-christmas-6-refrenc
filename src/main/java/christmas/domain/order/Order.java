@@ -2,7 +2,6 @@ package christmas.domain.order;
 
 import christmas.domain.Badge;
 import christmas.domain.condition.Condition;
-import christmas.domain.event.DateEvent;
 import christmas.domain.event.Event;
 import christmas.domain.event.GiftEvent;
 import christmas.domain.menu.MenuItem;
@@ -33,9 +32,6 @@ public class Order {
             Integer date) {
         List<Event> result = new ArrayList<>();
         for (Event event : eventAll) {
-            if (event instanceof DateEvent) {
-                ((DateEvent) event).reservedAt(date);
-            }
             if (isEventApplicable(event.getConditions(), date, getTotalPrice())) {
                 result.add(event);
                 event.calculateDiscountPrice(orders, date);

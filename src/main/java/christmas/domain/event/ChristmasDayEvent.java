@@ -6,15 +6,9 @@ import christmas.domain.menu.MenuItem;
 import java.util.List;
 import java.util.Map;
 
-public class ChristmasDayEvent implements Event, DateEvent {
+public class ChristmasDayEvent implements Event {
 
     private Integer discountPrice;
-    private Integer date;
-
-    @Override
-    public void reservedAt(Integer date) {
-        this.date = date;
-    }
 
     @Override
     public List<Condition> getConditions() {
