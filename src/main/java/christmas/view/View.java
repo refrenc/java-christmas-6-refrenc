@@ -8,6 +8,7 @@ public class View {
         OutputView.printHello();
         while (true) {
             try {
+                OutputView.printDateInputMessage();
                 return InputView.readDate();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -18,6 +19,7 @@ public class View {
     static public String readOrder() {
         while (true) {
             try {
+                OutputView.printOrderInputMessage();
                 return InputView.readOrder();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());

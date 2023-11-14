@@ -13,6 +13,14 @@ public class OutputView {
         System.out.println("안녕하세요! 우테코 식당 12월 이벤트 플래너입니다.");
     }
 
+    static public void printDateInputMessage() {
+        System.out.println("12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)");
+    }
+
+    static public void printOrderInputMessage() {
+        System.out.println("주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)");
+    }
+
     static public void printDescription() {
         System.out.println("12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
         System.out.println();
@@ -43,7 +51,7 @@ public class OutputView {
 
     static public void printDiscountList(List<Event> events) {
         System.out.println("<혜택 내역>");
-        if(events.isEmpty()) {
+        if (events.isEmpty()) {
             System.out.println("없음");
             System.out.println();
             return;
