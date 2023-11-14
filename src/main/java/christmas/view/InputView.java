@@ -4,6 +4,8 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 
 import christmas.domain.menu.Menu;
 import christmas.domain.menu.MenuItem;
+import exception.BadDateException;
+import exception.BadOrderException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -30,10 +32,10 @@ public class InputView {
         try {
             Integer date = Integer.parseInt(input);
             if (date < 1 || date > 31) {
-                throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+                throw new BadDateException();
             }
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
+            throw new BadDateException();
         }
     }
 
@@ -44,7 +46,7 @@ public class InputView {
                 || !validateOrderFormat(orders)
                 || hasDuplicatedMenu(orders)
                 || isBeverageOnly(orders)) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new BadOrderException();
         }
     }
 
@@ -79,7 +81,7 @@ public class InputView {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new BadOrderException();
         }
     }
 

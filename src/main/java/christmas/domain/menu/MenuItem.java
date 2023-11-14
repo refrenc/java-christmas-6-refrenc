@@ -1,5 +1,7 @@
 package christmas.domain.menu;
 
+import exception.BadOrderException;
+
 public enum MenuItem {
     양송이수프(6_000),
     타파스(5_500),
@@ -30,6 +32,6 @@ public enum MenuItem {
                 return menu;
             }
         }
-        throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        throw new BadOrderException();
     }
 }
